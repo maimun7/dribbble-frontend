@@ -1,0 +1,375 @@
+/* ── FOOTER ── */
+.footer {
+  font-family: 'Mona Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #fff;
+}
+
+/* ══════════════════════════════════════
+   SIGN UP TO CONTINUE  (black pill btn)
+══════════════════════════════════════ */
+.footer-signup-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 32px;
+  position: relative;
+}
+
+.footer-signup-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: #0d0d0d;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Mona Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.footer-signup-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+/* Scroll-to-top circle */
+.footer-scroll-top {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  color: #6e6d7a;
+}
+
+.footer-scroll-top:hover {
+  background: #d0d0d0;
+  color: #0d0d0d;
+}
+
+.footer-scroll-top svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ══════════════════════════════════════
+   CATEGORY SCROLL STRIP
+══════════════════════════════════════ */
+.footer-categories {
+  padding: 0 0 40px;
+  overflow: hidden; /* clip the scroll */
+}
+
+/* The moving track — desktop infinite marquee */
+.cat-track-outer {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Gradient fade edges */
+.cat-track-outer::before,
+.cat-track-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cat-track-outer::before {
+  left: 0;
+  /* background: linear-gradient(to right, #fff, transparent); */
+}
+
+/* .cat-track-outer::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+} */
+
+.cat-track {
+  display: flex;
+  gap: 16px;
+  /* infinite scroll: animate translate from 0 to -50% 
+     (because we duplicate items for seamless loop) */
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+
+/* Pause on hover */
+.cat-track-outer:hover .cat-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Each category item */
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cat-item-thumb {
+  width: 200px;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #f2f2f0;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.cat-item:hover .cat-item-thumb {
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.cat-item-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cat-item-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0d0d0d;
+  text-align: left;
+  padding-left: 2px;
+}
+.cat-item-thumb {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── MOBILE: horizontal swipe scroll ── */
+@media (max-width: 900px) {
+  .cat-track-outer {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cat-track-outer::-webkit-scrollbar { display: none; }
+
+  /* disable the animation on mobile — use native scroll */
+  .cat-track {
+    animation: none !important;
+    width: max-content;
+  }
+
+  /* Remove fade edges on mobile */
+  .cat-track-outer::before,
+  .cat-track-outer::after { display: none; }
+
+  .cat-item-thumb {
+    width: 150px;
+    height: 112px;
+  }
+
+  .footer-categories {
+    padding: 0 20px 36px;
+  }
+}
+
+/* ══════════════════════════════════════
+   FOOTER NAV BAR
+══════════════════════════════════════ */
+.footer-nav-bar {
+  border-top: 1px solid #e8e8e8;
+  padding: 32px 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.footer-logo-link {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.footer-logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0d0d0d;
+  letter-spacing: -0.5px;
+  font-family: 'Mona Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+}
+
+/* Nav links */
+.footer-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
+}
+
+.footer-nav-link {
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0d0c22;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+
+.footer-nav-link:hover {
+  background: #f2f2f0;
+  color: #0d0d0d;
+}
+
+/* Social icons — Google Material Icons */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+  font-size: 20px;
+}
+
+.footer-social-icon:hover {
+  background: #f2f2f0;
+  transform: scale(1.1);
+}
+
+/* SVG social icons sizing */
+.footer-social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #0d0d0d;
+}
+
+/* ══════════════════════════════════════
+   FOOTER BOTTOM BAR
+══════════════════════════════════════ */
+.footer-bottom {
+  padding: 16px 40px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: #6e6d7a;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-copy a {
+  color: #6e6d7a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-copy a:hover { color: #0d0d0d; }
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-right a {
+  font-size: 13px;
+  color: #6e6d7a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-bottom-right a:hover { color: #0d0d0d; }
+
+/* ── RESPONSIVE NAV BAR ── */
+@media (max-width: 900px) {
+  .footer-nav-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px 16px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-nav-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 20px 28px;
+    text-align: center;
+  }
+
+  .footer-copy {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .footer-bottom-right {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .footer-scroll-top {
+    right: 20px;
+  }
+
+  .footer-signup-wrap {
+    padding: 32px 20px 28px;
+  }
+}
