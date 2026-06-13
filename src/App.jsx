@@ -60,7 +60,7 @@ export default function App() {
 
   if (!token) return;
 
-  fetch("${BASE}/api/users/me", {
+  fetch(`${BASE}/api/users/me`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

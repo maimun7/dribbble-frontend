@@ -61,7 +61,7 @@ export default function EditProfile({ user, setUser }) {
         formData.append("file", avatar);
 
         const uploadRes = await fetch(
-          "${BASE}/api/users/avatar",
+          `${BASE}/api/users/avatar`,
           {
             method: "POST",
             headers: {
@@ -76,7 +76,7 @@ export default function EditProfile({ user, setUser }) {
       }
 
       // update profile
-      const res = await fetch("${BASE}/api/users/me", {
+      const res = await fetch(`${BASE}/api/users/me`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

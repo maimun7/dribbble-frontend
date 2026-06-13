@@ -202,7 +202,7 @@ export default function Navbar({ user, onLogout }) {
       <nav className="navbar">
         {/* Logo */}
         <a href="/" className="navbar-logo">
-          <img src="/src/assets/logo.svg" alt="Dribbble" className="logo-img"
+          <img src="/logo.svg" alt="Dribbble" className="logo-img"
             onError={e => { e.target.style.display = "none"; }} />
 
         </a>
@@ -301,7 +301,7 @@ export default function Navbar({ user, onLogout }) {
           <div className="mobile-overlay" onClick={() => setMobileOpen(false)} />
           <div className="mobile-menu">
             <div className="mobile-menu-header">
-              <span className="mobile-menu-logo"><a href="/"><img src="/src/assets/logo.svg" alt="logo" className="logo-img" /></a></span>
+              <span className="mobile-menu-logo"><a href="/"><img src="/logo.svg" alt="logo" className="logo-img" /></a></span>
               <button className="mobile-close" onClick={() => setMobileOpen(false)}>✕</button>
             </div>
 

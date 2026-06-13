@@ -136,7 +136,8 @@ export default function Home({ activeTab, onTabChange }) {
                             {/* <PlayIcon /> */}
                             <div className="hero-video-placeholder-ma">
                                 <video
-                                src="/src/assets/video.mp4"   
+                                // src="/src/assets/video.mp4"   
+                                src="/video.mp4"
                                 autoPlay
                                 loop
                                 muted

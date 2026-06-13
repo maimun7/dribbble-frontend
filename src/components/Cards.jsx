@@ -335,7 +335,7 @@ const [tfOpen, setTfOpen] = useState(false);
     if (!token) return;
 
     // Fetch liked IDs
-    fetch("${BASE}/api/likes/me", {
+    fetch(`${BASE}/api/likes/me`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.ok ? r.json() : [])
@@ -345,7 +345,7 @@ const [tfOpen, setTfOpen] = useState(false);
       .catch(() => { });
 
     // Fetch saved IDs
-    fetch("${BASE}/api/saves/me", {
+    fetch(`${BASE}/api/saves/me`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.ok ? r.json() : [])
