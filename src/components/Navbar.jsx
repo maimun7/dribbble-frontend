@@ -11,6 +11,9 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
+const BASE = import.meta.env.VITE_API_URL;
+
+
 /* ── ICONS ── */
 const Chevron = () => <svg className="chevron" viewBox="0 0 24 24" fill="black" width="10" height="10"><path d="M7 10l5 5 5-5z" /></svg>;
 const IconAssignment = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 26 26" fill="none" role="img" aria-hidden="true" class="icon ">
@@ -112,7 +115,7 @@ function UserMenu({ user, onLogout }) {
           {user?.avatarUrl
             // ? <img src={user.avatarUrl} alt={user.name} className="user-avatar-img" />
             ? <img
-              src={`http://localhost:8080${user.avatarUrl}`}
+              src={`${BASE}${user.avatarUrl}`}
               alt={user.name}
               className="user-avatar-img"
             />
@@ -130,7 +133,7 @@ function UserMenu({ user, onLogout }) {
               {user?.avatarUrl
                 // ? <img src={user.avatarUrl} alt={user.name} className="user-avatar-img" />
                 ? <img
-              src={`http://localhost:8080${user.avatarUrl}`}
+              src={`${BASE}${user.avatarUrl}`}
               alt={user.name}
               className="user-avatar-img"
             />

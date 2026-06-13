@@ -51,6 +51,8 @@ import wdcard4 from "../assets/wdcard4.png";
 import wdcard5 from "../assets/wdcard5.png";
 import wdcard6 from "../assets/wdcard6.png";
 
+const BASE = import.meta.env.VITE_API_URL;
+
 
 /* ── DATA ── */
 const ALL_SHOTS = {
@@ -333,7 +335,7 @@ const [tfOpen, setTfOpen] = useState(false);
     if (!token) return;
 
     // Fetch liked IDs
-    fetch("http://localhost:8080/api/likes/me", {
+    fetch("${BASE}/api/likes/me", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.ok ? r.json() : [])
@@ -343,7 +345,7 @@ const [tfOpen, setTfOpen] = useState(false);
       .catch(() => { });
 
     // Fetch saved IDs
-    fetch("http://localhost:8080/api/saves/me", {
+    fetch("${BASE}/api/saves/me", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.ok ? r.json() : [])
@@ -374,7 +376,7 @@ const [tfOpen, setTfOpen] = useState(false);
 
     // Call backend
     try {
-      const res = await fetch(`http://localhost:8080/api/likes/${shotId}`, {
+      const res = await fetch(`${BASE}/api/likes/${shotId}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -416,7 +418,7 @@ const [tfOpen, setTfOpen] = useState(false);
 
     // Call backend
     try {
-      const res = await fetch(`http://localhost:8080/api/saves/${shotId}`, {
+      const res = await fetch(`${BASE}/api/saves/${shotId}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });

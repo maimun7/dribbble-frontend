@@ -11,9 +11,10 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css"; // shared CSS
+const BASE = import.meta.env.VITE_API_URL;
 
-// const BASE = "http://localhost:8080";
-const BASE = "https://dribbblebackend-production.up.railway.app";
+// const BASE = "${BASE}";
+// const BASE = "https://dribbblebackend-production.up.railway.app";
 // const GOOGLE_CLIENT_ID = "755464593792-m0hrlfhkerqn7t3op8va42uu49p4u3d0.apps.googleusercontent.com"; // ← change this
 const GOOGLE_CLIENT_ID = "571740583000-6paalr1so03bisjk97bh4i9agcj1oiph.apps.googleusercontent.com"; // ← change this
 

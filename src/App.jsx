@@ -16,6 +16,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import CardsFooter from "./components/CardsFooter";
 import EditProfile from "./pages/EditProfile";
 
+const BASE = import.meta.env.VITE_API_URL;
 
 function HomePage({ user, onLogout, activeTab, onTabChange }) {
   return (
@@ -59,7 +60,7 @@ export default function App() {
 
   if (!token) return;
 
-  fetch("http://localhost:8080/api/users/me", {
+  fetch("${BASE}/api/users/me", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
