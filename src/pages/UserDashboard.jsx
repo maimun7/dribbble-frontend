@@ -235,7 +235,7 @@ export default function UserDashboard({ user }) {
           <div className="ud-avatar-wrap">
             <div className="ud-avatar">
               {user.avatarUrl
-                ? <img src={user.avatarUrl} alt={user.name} />
+                ? <img src={`${BASE}${user.avatarUrl}`} alt={user.name} />
                 : <span>{initials}</span>
               }
             </div>
