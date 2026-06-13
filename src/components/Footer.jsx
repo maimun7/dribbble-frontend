@@ -166,7 +166,7 @@ export default function Footer() {
         {/* Logo */}
         <a href="#" className="footer-logo-link">
           {/* <span className="footer-logo-text">Dribbble</span> */}
-          <img src="/logo.svg"  alt="logo" className="logo-img" />
+          <img src="/Logo.svg"  alt="logo" className="logo-img" />
         </a>
 
         {/* Nav links */}

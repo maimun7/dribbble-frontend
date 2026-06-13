@@ -248,7 +248,7 @@ export default function SignUp({ onLogin }) {
 
   return (
     <div className="auth-page">
-      <Link to="/" className="auth-top-logo"><img src="/logo.svg" alt="Dribbble" className="logo-img"/></Link>
+      <Link to="/" className="auth-top-logo"><img src="/Logo.svg" alt="Dribbble" className="logo-img"/></Link>
 
       <div className="auth-card">
         {screen === "otp" ? (
